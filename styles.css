@@ -1,0 +1,272 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  margin-top: 2rem;
+  font-family: figtree, "sans-serif";
+  font-size: 1rem;
+  color: white;
+  padding-inline: 1rem;
+  background: url("img/aleksandr-popov-3InMDrsuYrk-unsplash.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 750px;
+
+  margin-inline: 3rem;
+  padding-inline: 0.8rem;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 1rem;
+}
+
+nav ul li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transform: translate(0, 2rem);
+  background-color: white;
+  border-radius: 3rem;
+  width: 100%;
+  height: 0.188rem;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover::before {
+  transform: translate(0, 1.2rem);
+  opacity: 1;
+}
+
+header form {
+  display: flex;
+  align-items: center;
+
+  padding-inline-end: 0.5rem;
+  border: 1px solid white;
+  border-radius: 0.3rem;
+}
+
+input[type="search"] {
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+
+input[type="search"]::placeholder {
+  color: white;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  height: 100vh;
+  margin-top: 6rem;
+}
+
+.form-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 500px 500px;
+  align-items: center;
+  justify-items: center;
+
+  border-radius: 1rem;
+  padding: 3rem;
+
+  background: url("img/aleksandr-popov-3InMDrsuYrk-unsplash.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+
+  /* EFFECTS */
+  box-shadow: 0 0 2rem 1px rgb(0, 0, 0);
+}
+
+.form-container::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 50%;
+  right: 0;
+  top: 0;
+  filter: blur(0.6rem);
+  pointer-events: none;
+  background: url("img/aleksandr-popov-3InMDrsuYrk-unsplash.jpg") no-repeat;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.form-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+
+  font-size: 2rem;
+  user-select: none;
+}
+
+.form-heading p {
+  font-weight: 800;
+}
+
+.form-first-column {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
+.form-content {
+  margin-top: 8rem;
+}
+
+.form-content h1 {
+  line-height: 1.3;
+}
+
+.form-content span {
+  display: block;
+}
+
+.form-content p {
+  margin-top: 1rem;
+}
+
+.logo-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.logo-links img {
+  width: 1.5rem;
+  background-color: white;
+}
+
+.form-page {
+  padding: 1rem;
+}
+
+.form-page h2 {
+    font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+:is(.email-container, .password-container) {
+  position: relative;
+  border-bottom: 1px solid white;
+}
+
+.password-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+:is(label, .form-page ion-icon):not(.remember) {
+  position: absolute;
+  transform: translate(0, -.2rem);
+  transition: all 0.3s;
+}
+
+:is(.email-container:focus-within, .password-container:focus-within)
+  :is(label, ion-icon):not(.remember) {
+  transform: translate(0, -1.5rem);
+}
+
+:is(input[type="email"], input[type="password"]) {
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.form-page ion-icon {
+  right: 0;
+}
+
+.form-page label {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+.remember-forgot a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.form-page button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: .6rem;
+    color: white;
+    font-size: 1.1rem;
+    border: 1px solid transparent;
+    border-radius: .3rem;
+    background-color: rgb(141, 14, 14);
+    cursor: pointer;
+
+    transition: all .3s;
+}
+
+.form-page button:hover {
+    color: rgb(141, 14, 14);
+    background-color: white;
+    border: 1px solid rgb(141, 14, 14);
+}
+
+.account {
+    margin-top: 1rem;
+}
+
+.account a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.account a:hover {
+    text-decoration: underline;
+}
